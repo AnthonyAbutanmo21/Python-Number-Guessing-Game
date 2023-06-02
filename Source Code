@@ -1,0 +1,38 @@
+import random
+import sys
+
+max_num = int(input("Enter Maximum Number: "))
+a = random.randrange(1,max_num)
+
+divider = max_num / 2
+
+
+Lives = int(input("Enter How Many Lives: "))
+if a < divider:
+    print("Number is Lower")
+
+elif a > divider:
+    print("Number is Higher")
+
+while Lives != 0:
+        choice = int(input("Guess the number: "))
+
+        if choice == a:
+
+            print("======================================================")
+            print("CONGRATULATIONS")
+            print("You Won, You've Guess the Correct Number which is ", a)
+            print("======================================================")
+
+            sys.exit()
+        else:
+            Lives -= 1
+            print(Lives, "Chance Left")
+            print("Wrong")
+            print("Guess Again: ")
+            print("===========================================")
+
+else:
+    print("Defeat")
+    print("The Correct Number is ", a)
+
